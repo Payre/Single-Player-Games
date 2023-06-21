@@ -3,12 +3,6 @@ import numpy as np
 import random as rad
 
 
-#main function
-def main():
-    tboard()
-    playerselect()
-    dumbai()
-    posi()
 
 #creating a game board
 
@@ -16,32 +10,35 @@ def main():
 def tboard():
     board = np.array([[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']])
     print(board)
+    print(board)
+    return board
 
-def playerselect():
+
+def ps():
     #player choose - completed
     while True:
         inpu = input("Enter X or O: ").lower() #fucking dumb, forgot to take input again inside the loop.
         print(inpu)
-        dumbai()
+
         if inpu == 'x' or inpu == 'o':
             print(f"Player one is {inpu}")
             break
         print("Please enter a valid input, only 'X' and 'O'.")
+    return ps
 
 
 #position selector
-def posi():
+
+#main function
+def main(board, inpu):
+    tboard()
+    print(board)
+    ps()
     for x in range(9):
         r = int(input("Enter the row: "))
         c = int(input("Enter the column: "))
         r -= 1
         c -= 1
-        board[r,c]=inpu
-        board[r,c]=inpu
-        print(board)
-
-#dumb ai
-def dumbai():
     print("ok xa ta")
     npc1 = rad.randint(0,9)
     npc2= rad.randint(0,9)
@@ -50,6 +47,7 @@ def dumbai():
     board[r,c]=inpu
     print(board)
 
+print("hello!")
 
 
 #taking input from the user.
