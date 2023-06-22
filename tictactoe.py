@@ -7,47 +7,35 @@ import random as rad
 #creating a game board
 
 '''initializing an empty board with an order of 3x3'''
-def tboard():
-    board = np.array([[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']])
-    print(board)
-    print(board)
-    return board
+board = np.array([[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']])
+print(board)
 
 
-def ps():
-    #player choose - completed
-    while True:
-        inpu = input("Enter X or O: ").lower() #fucking dumb, forgot to take input again inside the loop.
-        print(inpu)
-
-        if inpu == 'x' or inpu == 'o':
-            print(f"Player one is {inpu}")
-            break
+#player choose - completed
+while True:
+    inpu = input("Enter X or O: ").lower() #fucking dumb, forgot to take input again inside the loop.
+    if inpu == 'x' or inpu == 'o':
+        print(f"Player one is {inpu}")
+        break
+    else:
         print("Please enter a valid input, only 'X' and 'O'.")
-    return ps
 
 
 #position selector
-
-#main function
-def main(board, inpu):
-    tboard()
+for x in range(9):
+    r = int(input("Enter the row: "))
+    c = int(input("Enter the column: "))
+    r -= 1
+    c -= 1
+    board[r,c]=inpu
     print(board)
-    ps()
-    for x in range(9):
-        r = int(input("Enter the row: "))
-        c = int(input("Enter the column: "))
-        r -= 1
-        c -= 1
     print("ok xa ta")
+
+def ai():
     npc1 = rad.randint(0,9)
     npc2= rad.randint(0,9)
     if r == npc1 and c == npc2:
         pass
-    board[r,c]=inpu
-    print(board)
-
-print("hello!")
 
 
 #taking input from the user.
