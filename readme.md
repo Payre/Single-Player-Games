@@ -2,4 +2,5 @@ Under construction:
 
 
 Version status:
-	Currently moving to function.
+	Currently working in quality of life.
+    Adding win loss and draw.
