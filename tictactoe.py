@@ -46,7 +46,14 @@ for x in range(5):
     print("ok xa ta")
     ai(npc, r, c)
 #checks win or loss
-    
+    if inpu == "x":
+        if (board[0,0] == board[1,1] == board[2,2]) or (board[0,2] == board[1,1] == board[2,0]) or (board[0,0] == board[0,1] == board[0,2]) or (board[1,0] == board[1,1] == board[1,2]) or (board[2,0] == board[2,1] == board[2,2]) or (board[0,0] == board[1,0] == board[2,0]) or (board[0,1] == board[1,1] == board[2,1] or (board[0,2] == board[1,2] == board[2,2])):
+            print(f"{inpu} is the winner")
+            break
+    else:
+        '''if (board[0,0] == board[1,1] == board[2,2]) or (board[0,2] == board[1,1] == board[2,0]) or (board[0,0] == board[0,1] == board[0,2]) or (board[1,0] == board[1,1] == board[1,2]) or (board[2,0] == board[2,1] == board[2,2]) or (board[0,0] == board[1,0] == board[2,0]) or (board[0,1] == board[1,1] == board[2,1] or (board[0,2] == board[1,2] == board[2,2])):
+            print(f"{inpu} is the winner")
+            break'''
 
 
 
@@ -61,6 +68,4 @@ for x in range(5):
 
 #libraries infomration
 '''random: https://docs.python.org/3/library/random.html'''
-
-#creating ai is aaukat bahira.
 
