@@ -17,7 +17,21 @@ def ai(npc):
         if board[npc_r, npc_c] == ' ':
             board[npc_r, npc_c] = npc
             break
+        check_win(board, npc)
 
+
+def check_win(board, temo):
+    #checking if coloumn win or loss
+    for r in range(3):
+        if all(board[r, c] == temo for c in range(3)):
+            return True
+    #checking for row
+    for c in range(3):
+        if all(board[r,c] == temo for r in range(3)):
+            return True
+    #diagnoal
+        if board[0, 0] == board[1, 1] == board[2, 2] == temo or board[0, 2] == board[1, 1] == board[2, 0] == temo:
+            return True
 
 #player choose - completed
 while True:
@@ -40,7 +54,15 @@ for x in range(5):
     r -= 1
     c -= 1
     board[r,c]=inpu
+    if check_win(board, inpu):
+        print(f"Player {inpu} wins!")
+        break
     ai(npc)
+    if check_win(board, npc):
+        print(f"Player {npc} wins!")
+        print("GIT GUD!")
+        break
+
     print(board)
     print("ok xa ta")
 
@@ -54,6 +76,11 @@ for x in range(5):
             print(f"{inpu} is the winner")
             break'''
 
+#status and to work
+'''
+1. User input is dominant fix that
+2. Add multiplayer
+3. Add graphics'''
 
 
 
