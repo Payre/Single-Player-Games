@@ -7,18 +7,16 @@ import random as rad
 
 '''initializing an empty board with an order of 3x3'''
 board = np.array([[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']])
-print(board)
+#print(board)
 
 #the ai of the game
-def ai(npc, r, c):
-    npc1 = rad.randint(0,2)
-    npc2= rad.randint(0,2)
-    while (r == npc1 and c == npc2) or board[npc1, npc2] != ' ':
-        npc1 = rad.randint(0,2)
-        npc2= rad.randint(0,2)
-    board[npc1, npc2] = npc
-    print(board)
-
+def ai(npc):
+    while True:
+        npc_r = rad.randint(0,2)
+        npc_c = rad.randint(0,2)
+        if board[npc_r, npc_c] == ' ':
+            board[npc_r, npc_c] = npc
+            break
 
 
 #player choose - completed
@@ -42,16 +40,17 @@ for x in range(5):
     r -= 1
     c -= 1
     board[r,c]=inpu
+    ai(npc)
     print(board)
     print("ok xa ta")
-    ai(npc, r, c)
+
 #checks win or loss
-    if inpu == "x":
+'''    if inpu == "x":
         if (board[0,0] == board[1,1] == board[2,2]) or (board[0,2] == board[1,1] == board[2,0]) or (board[0,0] == board[0,1] == board[0,2]) or (board[1,0] == board[1,1] == board[1,2]) or (board[2,0] == board[2,1] == board[2,2]) or (board[0,0] == board[1,0] == board[2,0]) or (board[0,1] == board[1,1] == board[2,1] or (board[0,2] == board[1,2] == board[2,2])):
             print(f"{inpu} is the winner")
             break
     else:
-        '''if (board[0,0] == board[1,1] == board[2,2]) or (board[0,2] == board[1,1] == board[2,0]) or (board[0,0] == board[0,1] == board[0,2]) or (board[1,0] == board[1,1] == board[1,2]) or (board[2,0] == board[2,1] == board[2,2]) or (board[0,0] == board[1,0] == board[2,0]) or (board[0,1] == board[1,1] == board[2,1] or (board[0,2] == board[1,2] == board[2,2])):
+        if (board[0,0] == board[1,1] == board[2,2]) or (board[0,2] == board[1,1] == board[2,0]) or (board[0,0] == board[0,1] == board[0,2]) or (board[1,0] == board[1,1] == board[1,2]) or (board[2,0] == board[2,1] == board[2,2]) or (board[0,0] == board[1,0] == board[2,0]) or (board[0,1] == board[1,1] == board[2,1] or (board[0,2] == board[1,2] == board[2,2])):
             print(f"{inpu} is the winner")
             break'''
 
