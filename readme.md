@@ -6,6 +6,7 @@ Version status:
 
 Bugs:
     User input is dominant fix that. User can overwrite npc.
+    
 Done:
 ✅. Add multiplayer
 
