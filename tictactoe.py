@@ -2,6 +2,11 @@
 import numpy as np
 import random as rad
 
+#creating multiplayer
+print("\t\t\t\t\t\tTic - x - Tac - o - Toe\n")
+print("\t\t\t\t\t\tPress 1 for Single Player\n")
+print("\t\t\t\t\t\tPress 2 for Multiplayer \n")
+mode = int(input("\t\t\t\t\t\tSelect your mode: "))
 
 #creating a game board
 
@@ -9,7 +14,7 @@ import random as rad
 board = np.array([[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']])
 #print(board)
 
-#the ai of the game
+#the single player of the game
 def ai(npc):
     while True:
         npc_r = rad.randint(0,2)
@@ -19,6 +24,19 @@ def ai(npc):
             break
         check_win(board, npc)
 
+#multiplayer
+def multi(npc):
+    for x in range(5):
+        r = int(input("Enter the row: "))
+        c = int(input("Enter the column: "))
+        r -= 1
+        c -= 1
+        board[r,c]=npc
+        print(board)
+        print("ok xa ta")
+        check_win(board, npc)
+        break
+        
 
 def check_win(board, temo):
     #checking if coloumn win or loss
@@ -54,27 +72,26 @@ for x in range(5):
     r -= 1
     c -= 1
     board[r,c]=inpu
+    print(board)
+    print("ok xa ta")
     if check_win(board, inpu):
         print(f"Player {inpu} wins!")
         break
-    ai(npc)
-    if check_win(board, npc):
-        print(f"Player {npc} wins!")
-        print("GIT GUD!")
-        break
-
-    print(board)
-    print("ok xa ta")
-
-#checks win or loss
-'''    if inpu == "x":
-        if (board[0,0] == board[1,1] == board[2,2]) or (board[0,2] == board[1,1] == board[2,0]) or (board[0,0] == board[0,1] == board[0,2]) or (board[1,0] == board[1,1] == board[1,2]) or (board[2,0] == board[2,1] == board[2,2]) or (board[0,0] == board[1,0] == board[2,0]) or (board[0,1] == board[1,1] == board[2,1] or (board[0,2] == board[1,2] == board[2,2])):
-            print(f"{inpu} is the winner")
+    if mode == 1:
+        ai(npc)
+        print(board)
+        if check_win(board, npc):
+            print(f"Player {npc} wins!")
+            print("GIT GUD!")
             break
     else:
-        if (board[0,0] == board[1,1] == board[2,2]) or (board[0,2] == board[1,1] == board[2,0]) or (board[0,0] == board[0,1] == board[0,2]) or (board[1,0] == board[1,1] == board[1,2]) or (board[2,0] == board[2,1] == board[2,2]) or (board[0,0] == board[1,0] == board[2,0]) or (board[0,1] == board[1,1] == board[2,1] or (board[0,2] == board[1,2] == board[2,2])):
-            print(f"{inpu} is the winner")
-            break'''
+        multi(npc)
+        if check_win(board, npc):
+            print(f"Player {npc} wins!")
+            print(f"GIT GUD! Noob")
+            break
+
+
 
 #status and to work
 '''
