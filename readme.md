@@ -1,15 +1,4 @@
-Under construction:
+This is a collection of games that I've made.
 
-
-Version status:
-    You can play with AI, it's not very user friendly. However you can do that.
-
-Bugs:
-    User input is dominant fix that. User can overwrite npc.
-Done:
-✅. Add multiplayer
-
-Up next:
-1. Add graphics
-
-
+TicTacToe (will be adding graphics to this)
+Rock Paper Scissors.
